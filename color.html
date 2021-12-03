@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* *{
+            border: 1px solid purple;
+        } */
+
+        /* div{
+            border: 1px solid green;
+        } */
+        .outer{
+            border: 3px solid purple;
+            width: 200px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+    justify-content: space-evenly;
+        }
+        .red{
+            background-color: lightpink;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            border: 1px solid green;
+        }
+      
+        .blue{
+            background-color: lightblue;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            
+            border: 1px solid green;
+
+        }
+
+        .green{
+            background-color: lightgreen;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            
+            border: 1px solid green;
+        }
+
+        .box-area{
+            border: 2px solid gray;
+            height: 100px;
+            width: 100px;
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class = "outer">
+        <div class = "red"></div>
+        <div class = "blue"></div>
+        <div class = "green"></div>
+
+    </div>
+    
+    <div class="box-area"></div>
+
+    
+    <script>
+        let area = document.querySelector(".box-area");
+       let red = document.querySelector(".red");
+       let green = document.querySelector(".green");
+       let blue = document.querySelector(".blue");
+       red.addEventListener("click",function(){
+            
+       area.style.background ="lightpink";
+
+        });
+        blue.addEventListener("click",function(){
+           
+       area.style.background ="lightblue";
+        });
+         green.addEventListener("click",function(){
+           
+       area.style.background ="lightgreen";
+        })
+
+    </script>
+</body>
+</html>

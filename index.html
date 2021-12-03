@@ -12,8 +12,56 @@
         }
         .fas{
             font-size: 2rem;
-            margin-right: 30px;
-            margin-left: 30px;
+        }
+        .fa{
+            font-size: 2rem;
+        }
+        .fa-solid{
+            font-size: 2rem;
+        }
+        .icon-palate{
+            width: 400px;
+            background-color: rgb(214, 214, 214);
+            height: 50px;
+            display: flex;
+            margin-left: 50px;
+            align-items: center;
+            justify-content: space-evenly;
+
+        }
+        /* .outer{
+            border: 3px solid purple;
+            width: 200px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+    justify-content: space-evenly;
+        } */
+        .red{
+            background-color: lightpink;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            border: 1px solid green;
+        }
+      
+        .blue{
+            background-color: lightblue;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            
+            border: 1px solid green;
+
+        }
+
+        .green{
+            background-color: lightgreen;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            
+            border: 1px solid green;
         }
 
     </style>
@@ -22,8 +70,19 @@
 <!-- <h1> Canvas Examples </h1> -->
 <body>
 
-    <i class="fas fa-square"></i>
-    <i class="fa fa-car"></i>
+    
+    <div class="icon-palate">
+        <i class="fas fa-square"></i>
+        <i class="fa fa-car"></i>
+        <i class="fa fa-pen"></i>
+        <i class="fa-solid fa-pen"></i>
+        <!-- <div class = "outer"> -->
+            <div class = "red"></div>
+            <div class = "blue"></div>
+            <div class = "green"></div>
+    
+        <!-- </div> -->
+    </div>
     <canvas></canvas>
 
 </body>
@@ -60,7 +119,7 @@
     let ix,iy,ex,ey;
     body.addEventListener("mousedown",function(e){
         // console.log(e);
-        ix = e.clientX+left;
+        ix = e.clientX-left;
         iy = e.clientY-tops;
     })
 
@@ -68,7 +127,7 @@
     body.addEventListener("mouseup",function(e){
         // console.log(e);
 
-        ex = e.clientX+left;
+        ex = e.clientX-left;
         ey = e.clientY-tops;
         if(chooseTool == "rectangle")
         tool.strokeRect(ix,iy,ex-ix,ey-iy);
@@ -79,6 +138,23 @@
             tool.stroke();
         }
 
-    })
+    });
+
+    let red = document.querySelector(".red");
+       let green = document.querySelector(".green");
+       let blue = document.querySelector(".blue");
+       red.addEventListener("click",function(){
+            
+       tool.strokeStyle="lightpink";
+
+        });
+        blue.addEventListener("click",function(){
+           
+            tool.strokeStyle="lightblue";
+        });
+         green.addEventListener("click",function(){
+           
+            tool.strokeStyle="lightgreen";
+        });
 </script>
 </html>
